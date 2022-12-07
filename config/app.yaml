@@ -1,0 +1,15 @@
+app:
+  name: linebot
+http:
+  port: 12366
+mongo_client:
+  host: localhost
+  port: "27017"
+  username: sa
+  password: pass.123
+  dial_timeout_sec: 30
+  max_open_conns: 0
+linebot_client:
+  token: "+QepjsT9XHBHjN8RXlPMajeAiQcqFizUWm/52GbyyNXwh3ql+7B3HA1mGRFEmP8z+R1ZDVVrbR1NKZoKp9sOUsJ3FNHzsiW5XkmOsyQ4p4DOD/cfZ7V3lsJ2SMTqKB0J83EzeoUdOvBVHyC/PrAmpwdB04t89/1O/w1cDnyilFU="
+  secret: "c5c6cc83712590f6e97376d4811abc33"
+  userId: "Uc3f936d22c83cbe8d3c51c71894e9cee"

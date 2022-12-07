@@ -1,0 +1,34 @@
+version: "3.7"
+
+services:
+  db:
+    container_name: mongo-dev
+    image: mongo
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=sa
+      - MONGO_INITDB_DATABASE=Msg
+      - MONGO_INITDB_ROOT_PASSWORD=pass.123
+    networks: 
+      - mongo-network
+    ports:
+      - '27017:27017'
+  
+  mongo-express:
+    container_name: mongo-express
+    image: mongo-express
+    depends_on:
+      - db
+    networks: 
+      - mongo-network
+    environment:
+      - ME_CONFIG_MONGODB_SERVER=mongo-dev
+      - ME_CONFIG_MONGODB_ADMINUSERNAME=sa
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=pass.123
+      - ME_CONFIG_BASICAUTH_USERNAME=sa
+      - ME_CONFIG_BASICAUTH_PASSWORD=pass.123
+    ports:
+      - '8081:8081'
+
+networks:
+  mongo-network:
+    driver: bridge
