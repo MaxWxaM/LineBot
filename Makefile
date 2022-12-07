@@ -1,4 +1,4 @@
-.PHONY: docker build check run help start
+.PHONY: docker build check run start
 BIN_FILE=linebot
 docker:
 	docker-compose up -d
